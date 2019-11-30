@@ -1,5 +1,3 @@
-#!/bin/bash
-#
 # Copyright (C) 2013-2016 The CyanogenMod Project
 # Copyright (C) 2017-2019 The LineageOS Project
 #
@@ -15,11 +13,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-set -e
-
-export DEVICE=i9300
-export DEVICE_COMMON=smdk4412-common
-export VENDOR=samsung
-export DEVICE_BRINGUP_YEAR=2013
-
-./../../$VENDOR/$DEVICE_COMMON/extract-files.sh $@
+add_lunch_combo lineage_i9300-userdebug
