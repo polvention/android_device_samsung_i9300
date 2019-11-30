@@ -1,5 +1,5 @@
-#
-# Copyright (C) 2012 The CyanogenMod Project
+# Copyright (C) 2013-2016 The CyanogenMod Project
+# Copyright (C) 2017-2019 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,8 +12,18 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
-include device/samsung/smdk4412-common/BoardCommonConfig.mk
+
+VENDOR=samsung
+DEVICE=i9300
+DEVICE_COMMON=smdk4412-common
+
+include device/$VENDOR/$DEVICE_COMMON/BoardConfigCommon.mk
+
+# Inherit from proprietary vendor
+-include vendor/$VENDOR/$DEVICE/BoardConfigVendor.mk
+
+# Manifest
+DEVICE_MANIFEST_FILE += device/$VENDOR/$DEVICE/manifest.xml
 
 # Wifi
 WIFI_DRIVER_MODULE_PATH :=
