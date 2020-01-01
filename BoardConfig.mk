@@ -17,13 +17,13 @@ VENDOR=samsung
 DEVICE=i9300
 DEVICE_COMMON=smdk4412-common
 
-include device/$VENDOR/$DEVICE_COMMON/BoardConfigCommon.mk
+include device/$(VENDOR)/$(DEVICE_COMMON)/BoardConfigCommon.mk
 
 # Inherit from proprietary vendor
--include vendor/$VENDOR/$DEVICE/BoardConfigVendor.mk
+-include vendor/$(VENDOR)/$(DEVICE)/BoardConfigVendor.mk
 
 # Manifest
-DEVICE_MANIFEST_FILE += device/$VENDOR/$DEVICE/manifest.xml
+DEVICE_MANIFEST_FILE += device/$(VENDOR)/$(DEVICE)/manifest.xml
 
 # Wifi
 WIFI_DRIVER_MODULE_PATH :=
@@ -44,7 +44,7 @@ BOARD_RIL_CLASS := ../../../device/samsung/i9300/ril
 TARGET_REQUIRES_SYNCHRONOUS_SETSURFACE := true
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/i9300/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/$(VENDOR)/$(DEVICE)/bluetooth
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/smdk4412
